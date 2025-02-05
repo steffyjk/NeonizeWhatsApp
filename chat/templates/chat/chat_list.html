@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhatsApp Chat</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'chat/styles.css' %}"> {% endcomment %}
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat</h2>
+        </div>
+        <div class="chat-messages">
+            {% for message in messages %}
+                <div class="chat-message">
+                    <strong>{{ message.sender }}:</strong> {{ message.content }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
+</body>
+</html>
